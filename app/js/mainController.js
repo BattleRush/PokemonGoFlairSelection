@@ -1,4 +1,18 @@
 var app = angular.module("pokemonGoFlair", []);
+
+app.config(['$locationProvider',
+function ($locationProvider) {
+    if (window.history && window.history.pushState) {
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    }
+    else {
+
+    }
+}]);
+
 app.controller('MainController', ['$scope', '$filter', function ($scope, $filter) {
     $scope.teamFlairCss = "plainflair";//No team as default. Not to cause any war
     $scope.currentlySelectedPokemon = null;
