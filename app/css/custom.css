@@ -1,0 +1,67 @@
+h1, h2, h3, h4, p {
+    color: white;
+}
+
+a {
+    color: darkblue;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+    table.striped > tbody > tr:nth-child(odd) {
+        background-color: rgba(180, 180, 180, 0.35);
+    }
+
+    table.striped > tbody > tr > td {
+        border-radius: 0px;
+    }
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background: linear-gradient( rgba(0, 0, 15, 0.60), rgba(0, 0, 0, 0.60) ), url(../../images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 30px;
+    overflow-x: hidden;
+    margin-bottom: 300px;
+    font-size: 14px;
+}
+
+.sortorder:after {
+    content: '\25b2';
+}
+
+.sortorder.reverse:after {
+    content: '\25bc';
+}
+
+.thumbnail-item {
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    left: -200px;
+    top: -200px;
+    position: absolute;
+    padding: 8px 0 0 8px;
+}
+
+.pokemonSelect {
+    cursor: pointer;
+    margin-bottom: .5rem;
+}
+
+.pokemonGeneration {
+    background-color: rgba(0,0,0,0.5);
+    padding: 0 20px 20px 20px;
+}
+
+.selectedPokemon{
+    border: 3px dotted blue !important;
+}

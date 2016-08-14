@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html ng-app="pokemonGoFlair">
+<head>
+    <title>SpaceX Patches</title>
+
+    <!--jQuery-->
+    <script type="text/javascript" src="library/js/jquery-2.1.1.min.js"></script>
+
+    <!--Materialize CSS-->
+    <script src="library/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="library/css/materialize.min.css">
+
+    <!--AngularJs-->
+    <script src="library/js/angular.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="library/css/bootstrap.min.css">
+    <script src="library/js/bootstrap.min.js"></script>
+
+    <!--Fonts-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Custom CSS-->
+    <link href="app/css/custom.css" rel="stylesheet">
+    <link href="app/css/pokemonGoFlair.css" rel="stylesheet">
+
+    <!--AngularJS App-->
+    <script src="app/js/mainController.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();//Bootstrap Tooltip initialization
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-82389698-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</head>
+<body ng-controller="MainController">
+    <center>
+        <img src="http://b.thumbs.redditmedia.com/92vX2lUrp9e_9zTSn81BTAtWsBiXXHo9wn_PdqfeydU.png" />
+        <h1><b>Flair Selection</b></h1>
+    </center>
+
+    <div class="row">
+        <div class="container">
+            <br />
+            <!--<p>
+                Select a team and click on a Pokémon you want as your flair on /r/PokemonGo.
+            </p>-->
+
+
+            <div class="row">
+                <div class="row" style="background-color: rgba(0,0,0,0.5);">
+                    <div class="col s12">
+                        <div class="col s4">
+                            <h3>Team Selection</h3>
+                            <br />
+                            <form action="#">
+                                <p>
+                                    <input name="groupTeam" type="radio" id="instinctCheckBox" ng-click="setTeamFlair(0);" />
+                                    <label for="instinctCheckBox">
+                                        <span class="flair flair-instinct" title=""></span>
+                                        Instinct
+                                    </label>
+                                </p>
+                                <br />
+                                <p>
+                                    <input name="groupTeam" type="radio" id="mysticCheckBox" ng-click="setTeamFlair(1);" />
+                                    <label for="mysticCheckBox">
+                                        <span class="flair flair-mystic" title=""></span>
+                                        Mystic
+                                    </label>
+                                </p>
+                                <br />
+                                <p>
+                                    <input name="groupTeam" type="radio" id="valorCheckBox" ng-click="setTeamFlair(2);" />
+                                    <label for="valorCheckBox">
+                                        <span class="flair flair-valor" title=""></span>
+                                        Valor
+                                    </label>
+                                </p>
+                                <br />
+                                <p>
+                                    <input name="groupTeam" type="radio" id="noTeamCheckBox" ng-click="setTeamFlair(3);" checked />
+                                    <label for="noTeamCheckBox">
+                                        <span class="flair flair-khan" title=""></span>
+                                        No Team
+                                    </label>
+                                </p>
+                            </form>
+                        </div>
+                        <div class="col s3">
+                            <h3>Generation Selection</h3>
+                            <br />
+                            <form action="#">
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="gen1" ng-model="generation_1" checked="checked" />
+                                    <label for="gen1">Generation 1</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="gen2" ng-model="generation_2" checked="checked" />
+                                    <label for="gen2">Generation 2</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="gen3" ng-model="generation_3" checked="checked" />
+                                    <label for="gen3">Generation 3</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="gen4" ng-model="generation_4" checked="checked" />
+                                    <label for="gen4">Generation 4</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="gen5" ng-model="generation_5" checked="checked" />
+                                    <label for="gen5">Generation 5</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" class="filled-in" id="gen6" ng-model="generation_6" checked="checked" />
+                                    <label for="gen6">Generation 6</label>
+                                </p>
+
+                            </form>
+
+                        </div>
+                        <div class="col s5">
+                            <div class="row col" style="margin-bottom: 0;">
+                                <h3>
+                                    Search
+                                </h3>
+                                <div class="input-field s12">
+                                    <!--<input class="transparent " type="search" ng-model="searchText" placeholder="Search for a specific Pokémon" />-->
+                                    <input placeholder="Start typing here to search for a Pokémon" type="text" ng-model="searchText" class="validate white-text">
+                                </div>
+                            </div>
+
+                            <div class="row col" style="background-color:rgba(100,100,100,0.50);padding:0 20px 20px 10px;">
+                                <h3>
+                                    Curently selected Pokémon
+                                </h3>
+                                <span ng-class="'left pokemonSelect flair flair-' + (currentlySelectedPokemon ? (teamFlairCss + '-' + currentlySelectedPokemon.css) : 'sp')"></span>
+
+                                <p class="left" style="display: table-cell;
+    vertical-align: middle;
+    padding: 8px; font-size:16px;width:200px; font-weight:bold;">{{currentlySelectedPokemon.name ? currentlySelectedPokemon.name : 'No Pokémon selected'}}</p>
+
+                                <input placeholder="Set your flair text here" type="text" ng-model="flairMessage" class="validate white-text">
+
+                                <a class="waves-effect waves-light btn right" ng-disabled="currentlySelectedPokemon == null" ng-click="openRedditMessage();">Send Request</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1><b>Select your Pokémon</b></h1>
+
+            <div class="row">
+                <div class="row pokemonGeneration" ng-repeat="pokemonGeneration in pokemonGenerationList | filter: searchFilterGeneration">
+                    <h2>
+                        <b>
+                            Generation {{pokemonGeneration.id}}
+                        </b> ({{(pokemonGeneration.pokemonList | filter: searchFilterPokemons).length}} Pokémon(s))
+                    </h2>
+
+                    <div style="float:left" ng-repeat="pokemon in pokemonGeneration.pokemonList | filter: searchFilterPokemons" ng-click="openPokemon(pokemon.name, pokemon.css);">
+                        <span ng-class="pokemonCss(pokemon);" data-toggle="tooltip" data-placement="top" title="{{pokemon.name}}"></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row white-text">
+                Createrd by /u/BattleRushGaming <a href="https://twitter.com/BattleRushFPS" target="_blank" class="blue-text lighten-2">Twitter</a><br />
+                Source available on <a href="https://github.com/BattleRush/PokemonGoFlairSelection" target="_blank" class="blue-text lighten-2">GitHub</a>.
+            </div>
+
+        </div>
+</body>
+</html>
