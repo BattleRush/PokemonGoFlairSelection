@@ -49,17 +49,12 @@
 <body ng-controller="MainController">
     <center>
         <img src="http://b.thumbs.redditmedia.com/92vX2lUrp9e_9zTSn81BTAtWsBiXXHo9wn_PdqfeydU.png" />
-        <h1><b>Flair Selection</b></h1>
+        <h1><b>Flair Selection for /r/PokemonGo</b></h1>
     </center>
 
     <div class="row">
         <div class="container">
             <br />
-            <!--<p>
-                Select a team and click on a Pokémon you want as your flair on /r/PokemonGo.
-            </p>-->
-
-
             <div class="row">
                 <div class="row" style="background-color: rgba(0,0,0,0.5);">
                     <div class="col s12">
@@ -145,13 +140,11 @@
 
                             <div class="row col" style="background-color:rgba(100,100,100,0.50);padding:0 20px 20px 10px;">
                                 <h3>
-                                    Curently selected Pokémon
+                                    Selected Pokémon
                                 </h3>
                                 <span ng-class="'left pokemonSelect flair flair-' + (currentlySelectedPokemon ? (teamFlairCss + '-' + currentlySelectedPokemon.css) : 'sp')"></span>
 
-                                <p class="left" style="display: table-cell;
-    vertical-align: middle;
-    padding: 8px; font-size:16px;width:200px; font-weight:bold;">{{currentlySelectedPokemon.name ? currentlySelectedPokemon.name : 'No Pokémon selected'}}</p>
+                                <p class="left pokemonName">{{currentlySelectedPokemon.name ? currentlySelectedPokemon.name : 'No Pokémon selected'}}</p>
 
                                 <input placeholder="Set your flair text here" type="text" ng-model="flairMessage" class="validate white-text">
 
@@ -178,15 +171,10 @@
                 </div>
             </div>
 
-
-
-
-
             <div class="row white-text">
                 Created by /u/BattleRushGaming <a href="https://twitter.com/BattleRushFPS" target="_blank" class="blue-text lighten-2">Twitter</a><br />
                 Source available on <a href="https://github.com/BattleRush/PokemonGoFlairSelection" target="_blank" class="blue-text lighten-2">GitHub</a>.
             </div>
-
         </div>
 </body>
 </html>
