@@ -82,11 +82,4 @@ namespace PokemonGoFlairExtract
 			}
 		}
 	}
-
-	public class Pokemon
-	{
-		public string Name { get; set; }
-		public string CssName { get; set; }
-		public int Generation { get; set; }
-	}
 }
