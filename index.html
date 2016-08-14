@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="pokemonGoFlair">
 <head>
-    <title>SpaceX Patches</title>
+    <title>/r/Pok√©monGo Flair selection</title>
 
     <!--jQuery-->
     <script type="text/javascript" src="library/js/jquery-2.1.1.min.js"></script>
@@ -56,7 +56,7 @@
         <div class="container">
             <br />
             <!--<p>
-                Select a team and click on a PokÈmon you want as your flair on /r/PokemonGo.
+                Select a team and click on a Pok√©mon you want as your flair on /r/PokemonGo.
             </p>-->
 
 
@@ -138,20 +138,20 @@
                                     Search
                                 </h3>
                                 <div class="input-field s12">
-                                    <!--<input class="transparent " type="search" ng-model="searchText" placeholder="Search for a specific PokÈmon" />-->
-                                    <input placeholder="Start typing here to search for a PokÈmon" type="text" ng-model="searchText" class="validate white-text">
+                                    <!--<input class="transparent " type="search" ng-model="searchText" placeholder="Search for a specific Pok√©mon" />-->
+                                    <input placeholder="Start typing here to search for a Pok√©mon" type="text" ng-model="searchText" class="validate white-text">
                                 </div>
                             </div>
 
                             <div class="row col" style="background-color:rgba(100,100,100,0.50);padding:0 20px 20px 10px;">
                                 <h3>
-                                    Curently selected PokÈmon
+                                    Curently selected Pok√©mon
                                 </h3>
                                 <span ng-class="'left pokemonSelect flair flair-' + (currentlySelectedPokemon ? (teamFlairCss + '-' + currentlySelectedPokemon.css) : 'sp')"></span>
 
                                 <p class="left" style="display: table-cell;
     vertical-align: middle;
-    padding: 8px; font-size:16px;width:200px; font-weight:bold;">{{currentlySelectedPokemon.name ? currentlySelectedPokemon.name : 'No PokÈmon selected'}}</p>
+    padding: 8px; font-size:16px;width:200px; font-weight:bold;">{{currentlySelectedPokemon.name ? currentlySelectedPokemon.name : 'No Pok√©mon selected'}}</p>
 
                                 <input placeholder="Set your flair text here" type="text" ng-model="flairMessage" class="validate white-text">
 
@@ -162,14 +162,14 @@
                 </div>
             </div>
 
-            <h1><b>Select your PokÈmon</b></h1>
+            <h1><b>Select your Pok√©mon</b></h1>
 
             <div class="row">
                 <div class="row pokemonGeneration" ng-repeat="pokemonGeneration in pokemonGenerationList | filter: searchFilterGeneration">
                     <h2>
                         <b>
                             Generation {{pokemonGeneration.id}}
-                        </b> ({{(pokemonGeneration.pokemonList | filter: searchFilterPokemons).length}} PokÈmon(s))
+                        </b> ({{(pokemonGeneration.pokemonList | filter: searchFilterPokemons).length}} Pok√©mon(s))
                     </h2>
 
                     <div style="float:left" ng-repeat="pokemon in pokemonGeneration.pokemonList | filter: searchFilterPokemons" ng-click="openPokemon(pokemon.name, pokemon.css);">
